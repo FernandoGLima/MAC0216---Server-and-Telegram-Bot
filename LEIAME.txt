@@ -1,0 +1,45 @@
+AUTOR:
+Fernando Gouveia Lima	   NUSP:13672710     EMAIL:FernandoLimaBusiness@gmail.com
+
+DESCRIÇÃO:
+O programa consiste na resolução do problema proposto pelo Ep2(Exercício de Programa) da disciplina MAC0216, do curso
+bacharelado de ciência da computação do IME USP-(Instituto de Matemática e Estatística da Universidade de São Paulo), 
+ministrada peo Daniel Macedo Batista.
+O programa tem como objetivo primário verificar periodicamente o servidor "iniciado" no computador do usuário, informar-lo
+se este "server" se encontra offline ou se estiver online deve informar se existe algum ip conectado a ele(exibindo os ips).
+Estas informações ( do server estar offline e se ele estiver online, os ips conectados a ele) serão "printadas" na tela, 
+enviadas por um bot no telegram e escritas em um arquivo inserido pelo usuário. Atreladas a elas serão "printadas", 
+enviadas e escritas as informações que indicam o horario e a data atual(atual ao momento em que o programa "roda"), 
+a ociosidade da CPU, se esta esiver abaixo do limite inserido pelo usuário(será escrito no arquivo a ociosidade mesmo acima
+do limite, também será inserido no arquivo a informação por quanto tempo o servidor ficou offline durantes as ultimas 100
+verificações, como também a média da ociosidade da CPU nas ultimas 100 verificações). 
+
+COMO EXECUTAR:
+Para executar o programa, primeiramente é necessário "subir" um terminal em sua máquina para isto abra seu terminal e 
+execute o comando "nc -k -l -p 45052", assim você terá iniciado seu servidor, agora abrar outro terminal e digite o comando
+"cd /mnt/c/DiretorioExemplo" que te leve para o diretório que contém o seu arquivo executavel, em seguida deve-se digitar 
+"./NomedoArquivo"(Neste caso EP2_Fernando_Gouveia_Lima), assim o programa irá iniciar.
+Primeiramente o programa irá "printar" para que você digite o intervalo de tempo que o programa irá verificar o sistema, 
+após isso você deve inserir o arquivo onde será guardada as informações(explicitadas no parágrafo da DESCRIÇÃO), caso 
+não tenha um arquivo para guardar estas informações basta escrever o nome de um arquivo inexistente que o programa
+criará um arquivo com tal nome. Feito isto, deve se inserir o limite da ociosidade da CPU(Isto irá indicar caso a CPU
+esteja abaixo do limite) e depois terá que inserir o "Token" e o "ID" de seu bot no telegram.
+A saída do programa será a data e hora atual, a informação de caso o servidor esteja offline ou se estiver online e caso
+exista ip(s) conectado(s) a ele, irá informar tais ips. Junto irá "printar" a ociosidade da CPU, caso esta esteja abaixo
+do limite. No telegram será passadas as mesmas informações. No arquivo terá a simples modificação informada na DESCRIÇÃO
+acima.
+
+TESTES:
+INPUTS:							POSSIVEIS OUTPUTS:
+1							Data de hoje: 10/17/22
+MeuArquivo.txt						Horario Atual: 02:20:56
+99.92							O servidor esta offline   ou    O(s) Ip(s) Conectado(s): 127.0.0.1:53213
+5797685613:AAEJaRyjKQqjSk4NlDR1zZpcVc3lArfDQl		A CPU esta (em porcentagem) ociosa:99.74, abaixo do limite passado
+1472350992						
+
+DEPENDÊNCIAS:
+Para executar este programa é necessário possuir um terminal linux para "rodar" os comandos e um bash versão 5.0.17(1)-
+(Esta versão foi utilizada pelo autor do programa).
+Este programa foi executado no sistema operacional Windows 10 64 bits, porém os comandos foram executados no WSL- 
+(Subsistema windows para linux), este oferece um ambiente linux compativel ao sistema da microsoft de forma que possa ser
+executados programas nativos do sistema GNU/LINUX. A versão baixada é do Ubuntu 20.04.5LTS.
